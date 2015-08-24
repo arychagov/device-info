@@ -16,7 +16,7 @@ package com.arychagov.deviceinfo;
 /**
  * Device processor info config provider
  */
-final class ProcessorConfigProvider {
+public final class ProcessorConfigProvider {
     ProcessorConfigProvider() {
     }
 

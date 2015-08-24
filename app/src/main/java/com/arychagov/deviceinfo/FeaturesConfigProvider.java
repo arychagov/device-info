@@ -23,7 +23,7 @@ import android.support.annotation.NonNull;
  *
  * @see PackageManager
  */
-final class FeaturesConfigProvider {
+public final class FeaturesConfigProvider {
     @NonNull private final PackageManager mPackageManager;
 
     FeaturesConfigProvider(final Context context) {

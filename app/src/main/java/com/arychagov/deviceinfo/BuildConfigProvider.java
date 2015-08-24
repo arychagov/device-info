@@ -21,7 +21,7 @@ import android.os.Build;
  *
  * @see Build
  */
-final class BuildConfigProvider {
+public final class BuildConfigProvider {
     BuildConfigProvider() {
     }
 

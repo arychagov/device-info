@@ -22,7 +22,7 @@ import android.support.annotation.NonNull;
  *
  * @see Configuration
  */
-final class ConfigurationConfigProvider {
+public final class ConfigurationConfigProvider {
     private static final String UNKNOWN = "UNKNOWN";
 
     @NonNull private final Context mContext;

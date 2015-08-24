@@ -18,6 +18,8 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 
 public class DeviceInfoUriBuilder {
+    private static final String BOARD = "board";
+
     @NonNull private final Uri.Builder mUriBuilder;
     @NonNull private final DeviceInfoProvider mDeviceInfoProvider;
 

@@ -18,7 +18,7 @@ import android.content.Context;
 import java.util.HashMap;
 import java.util.Map;
 
-final class TelephonyConfigProvider {
+public final class TelephonyConfigProvider {
     public TelephonyConfigProvider(final Context context) {
     }
 }

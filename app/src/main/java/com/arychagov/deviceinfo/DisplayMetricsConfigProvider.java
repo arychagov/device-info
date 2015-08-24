@@ -24,7 +24,7 @@ import android.view.WindowManager;
  *
  * @see DisplayMetrics
  */
-final class DisplayMetricsConfigProvider {
+public final class DisplayMetricsConfigProvider {
     private static final String UNKNOWN = "UNKNOWN";
 
     private final Context mContext;
