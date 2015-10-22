@@ -18,8 +18,6 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 
 public class DeviceInfoUriBuilder {
-    private static final String BOARD = "board";
-
     @NonNull private final Uri.Builder mUriBuilder;
     @NonNull private final DeviceInfoProvider mDeviceInfoProvider;
 
@@ -69,6 +67,10 @@ public class DeviceInfoUriBuilder {
         return new BuildConfigUriBuilder(mDeviceInfoProvider.getBuildConfigProvider());
     }
 
+    public ConfigurationConfigUriBuilder startConfigurationConfig() {
+        return new ConfigurationConfigUriBuilder(mDeviceInfoProvider.getConfigurationConfigProvider());
+    }
+
     /**
      * Constructs a Uri with the current attributes.
      *
@@ -89,7 +91,9 @@ public class DeviceInfoUriBuilder {
         return mUriBuilder;
     }
 
-    public class BuildConfigUriBuilder {
+    private class BuildConfigUriBuilder {
+        private static final String BOARD = "board";
+
         @NonNull private final BuildConfigProvider mProvider;
 
         private BuildConfigUriBuilder(@NonNull final BuildConfigProvider provider) {
@@ -104,9 +108,46 @@ public class DeviceInfoUriBuilder {
             mUriBuilder.appendQueryParameter(key, mProvider.getBoard());
             return this;
         }
+    }
 
-        public DeviceInfoUriBuilder endBuildConfig() {
-            return DeviceInfoUriBuilder.this;
+    private class ConfigurationConfigUriBuilder {
+        @NonNull private final ConfigurationConfigProvider mProvider;
+
+        public ConfigurationConfigUriBuilder(@NonNull final ConfigurationConfigProvider provider) {
+            mProvider = provider;
+        }
+    }
+
+    private class DisplayMetricsUriBuilder {
+        @NonNull private final DisplayMetricsConfigProvider mProvider;
+
+        private DisplayMetricsUriBuilder(final @NonNull DisplayMetricsConfigProvider provider) {
+            mProvider = provider;
+        }
+    }
+
+
+    private class FeaturesUriBuilder {
+        @NonNull private final FeaturesConfigProvider mProvider;
+
+        private FeaturesUriBuilder(final @NonNull FeaturesConfigProvider provider) {
+            mProvider = provider;
+        }
+    }
+
+    private class ProcessorUriBuilder {
+        @NonNull private final ProcessorConfigProvider mProvider;
+
+        private ProcessorUriBuilder(final @NonNull ProcessorConfigProvider provider) {
+            mProvider = provider;
+        }
+    }
+
+    private class TelephonyUriBuilder {
+        @NonNull private final TelephonyConfigProvider mProvider;
+
+        private TelephonyUriBuilder(final @NonNull TelephonyConfigProvider provider) {
+            mProvider = provider;
         }
     }
 }
